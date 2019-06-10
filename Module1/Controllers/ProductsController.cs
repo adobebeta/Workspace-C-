@@ -23,9 +23,16 @@ namespace Module1.Controllers
         //    return _products;
         //}
 
-            public IActionResult Get()
+         [HttpGet]
+        public IActionResult GetProduct()
         {
             return Ok(_products);
+        }
+
+        [HttpGet("LoadWelcomMessage")]
+        public IActionResult GetWelcomeMessage()
+        {
+            return Ok("Welcome to our store");
         }
 
         [HttpPost] //pass
