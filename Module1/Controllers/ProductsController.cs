@@ -12,10 +12,10 @@ namespace Module1.Controllers
     [ApiController]
     public class Products2Controller : ControllerBase
     {
-        static List<Product> _products = new List<Product>() {
-            new Product() {ProductId = 0 , ProductName = "Lapbtop" , ProductPrice = "100"},
-            new Product() {ProductId = 2 , ProductName = "Zoommo" , ProductPrice = "1000"},
-            new Product() {ProductId = 1 , ProductName = "SmartHome" , ProductPrice = "200"}
+        static List<Products> _products = new List<Products>() {
+            new Products() {ProductId = 0 , ProductName = "Lapbtop" , ProductPrice = "100"},
+            new Products() {ProductId = 2 , ProductName = "Zoommo" , ProductPrice = "1000"},
+            new Products() {ProductId = 1 , ProductName = "SmartHome" , ProductPrice = "200"}
             };
 
         //public IEnumerable<Products> Get()
@@ -36,20 +36,20 @@ namespace Module1.Controllers
         }
 
         [HttpPost] //pass
-        public IActionResult Post([FromBody]Product products)
+        public IActionResult Post([FromBody]Products products)
         {
             _products.Add(products);
             return StatusCode(StatusCodes.Status201Created);
         }
 
         [HttpPut("{id}")] //pass
-        public void Put(int id,[FromRoute]Product products)
+        public void Put(int id,[FromRoute]Products products)
         {
             _products[id] = products;
         }
 
         [HttpDelete("{id}")] //pass
-        public void Delete(int id, [FromBody]Product products)
+        public void Delete(int id, [FromBody]Products products)
         {
             _products.RemoveAt(id);
         }

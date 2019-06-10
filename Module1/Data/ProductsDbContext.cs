@@ -9,6 +9,6 @@ namespace Module1.Data
 {
     public class ProductsDbContext : DbContext
     {
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Products> Products { get; set; }
     }
 }
