@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using Module1.Models;
 using Module1.Data;
 using Module1.Controllers;
+using Microsoft.EntityFrameworkCore;
 
 namespace Module1
 {
@@ -29,7 +30,7 @@ namespace Module1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<ProductsDbContext>();
+            //services.AddDbContext<ProductsDbContext>(option => option.UseSqlServer(@"Data Source"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
