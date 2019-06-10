@@ -14,6 +14,7 @@ namespace Module1.Controllers
     {
         static List<Products> _products = new List<Products>() {
             new Products() {ProductId = 0 , ProductName = "Lapbtop" , ProductPrice = "100"},
+            new Products() {ProductId = 2 , ProductName = "Zoommo" , ProductPrice = "1000"},
             new Products() {ProductId = 1 , ProductName = "SmartHome" , ProductPrice = "200"}
             };
 
