@@ -10,7 +10,7 @@ namespace Module1.Controllers
 {
     [Route("api/Products")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class Products2Controller : ControllerBase
     {
         static List<Products> _products = new List<Products>() {
             new Products() {ProductId = 0 , ProductName = "Lapbtop" , ProductPrice = "100"},
