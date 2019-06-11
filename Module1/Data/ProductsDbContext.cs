@@ -9,12 +9,13 @@ namespace Module1.Data
 {
     public class ProductsDbContext : DbContext
     {
-        public ProductsDbContext(DbContextOptions<ProductsDbContext>options):base(options)
+
+        public ProductsDbContext(DbContextOptions<ProductsDbContext> options) : base(options)
         {
 
         }
 
-        public DbSet<Products> Products { get; set; }
+       public DbSet<Products> Products { get; set; }
     }
-    
-}
+   }
+ 

@@ -6,10 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Module1.Controllers;
 using Module1.Data;
+using Module1.Models;
 
 namespace Module1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Products")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -21,9 +22,10 @@ namespace Module1.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Products> Get()
         {
-            return new string[] { "value1", "value2" };
+            return productsDbContext.Products;
+            //return new string[] { "value1", "value2" };
         }
 
         // GET: api/Products/5

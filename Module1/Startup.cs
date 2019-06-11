@@ -30,8 +30,10 @@ namespace Module1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<ProductsDbContext>(option=>option.UseSqlServer(@"Data Source=(localdb)\ProjectV13;Intial Catagory=ProductsDb"));
+            services.AddDbContext<ProductsDbContext>(option=>option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ProductsDb;"));
+       
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ProductsDbContext productsDbContext)
