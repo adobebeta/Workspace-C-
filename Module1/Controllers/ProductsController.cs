@@ -30,9 +30,14 @@ namespace Module1.Controllers
 
         // GET: api/Products/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            var product = productsDbContext.Products.SingleOrDefault(m => m.ProductId == id);
+            if (product == null)
+            {
+                return NotFound("No Record Found...");
+            }
+            return Ok(product);
         }
 
         // POST: api/Products
