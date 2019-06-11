@@ -42,8 +42,15 @@ namespace Module1.Controllers
 
         // POST: api/Products
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody]Products products)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            productsDbContext.Products.Add(products);
+            productsDbContext.SaveChanges(true);
+            return StatusCode(StatusCodes.Status201Created);
         }
 
         // PUT: api/Products/5
